@@ -40,6 +40,10 @@ body {
     transition: transform 0.5s linear;
 }
 
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
 .circle button {
     position: absolute;
     top: 50%;
@@ -66,6 +70,11 @@ body {
     transform-origin: top left;
 }
 
+.container.show-nav + nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
 nav {
     position: fixed;
     bottom: 40px;
@@ -82,7 +91,7 @@ nav ul li {
     text-transform: uppercase;
     color: #fff;
     margin: 40px 0;
-    /* transform: translateX(-100%); */
+    transform: translateX(-100%);
     transition: transform 0.4s ease-in;
 }
 
@@ -94,12 +103,26 @@ nav ul li i {
 /* lis after the initial li will have margin left 15px */
 nav ul li + li {
     margin-left: 15px;
+    transform: translateX(-150%);
 }
 
 /* lis after the 2nd li will have margin left 30px */
 nav ul li + li + li {
     margin-left: 30px;
+    transform: translateX(-200%);
 }
+
+nav a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+nav a:hover {
+    color: #FF4949;
+    font-weight: bold;
+}
+
 .content img {
     max-width: 100%;
 }
